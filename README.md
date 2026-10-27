@@ -1,6 +1,7 @@
+
 # 📌 AlwaysOnTop
 
-**A lightweight Windows System Tray utility for keeping selected application windows always on top.**
+### A lightweight Windows utility to keep your favourite applications always on top.
 
 ![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?logo=windows&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-.NET%20Framework%204.x-239120?logo=csharp&logoColor=white)
@@ -9,11 +10,15 @@
 ![License](https://img.shields.io/badge/License-MIT-F59E0B)
 [![Latest Release](https://img.shields.io/github/v/release/LibbyLamarr/AlwaysOnTop?label=Download&color=brightgreen)](https://github.com/LibbyLamarr/AlwaysOnTop/releases/latest)
 
-**AlwaysOnTop** (`AlwaysOnTop.exe`) lets you pin individual windows or applications above other windows without keeping its main interface open. It runs quietly in the Windows System Tray and provides a global keyboard shortcut, an interactive window picker and a manager for saved pins.
+**AlwaysOnTop** is a lightweight, portable Windows System Tray application that allows you to keep selected application windows visible above other windows.
 
-Unlike a simple one-time topmost toggle, AlwaysOnTop remembers pinned applications and can reapply their topmost status when their windows are reopened or recreated. It also includes handling for elevated windows, related processes and the relative stacking order of multiple pinned windows.
+Whether you're monitoring information, keeping a reference window visible, or working across multiple applications, AlwaysOnTop gives you control over which windows stay on top.
 
-No installer or third-party NuGet packages are required. The utility uses the Windows .NET Framework and native Windows APIs.
+Unlike simple topmost toggles, AlwaysOnTop can **remember pinned applications across restarts, automatically re-pin reopened windows, manage multi-process application suites, handle elevated Administrator windows, and preserve relative window stacking order.**
+
+**No installer. No third-party dependencies. No unnecessary background services.**
+
+---
 
 ## ⬇️ Download
 
@@ -28,162 +33,290 @@ Download `AlwaysOnTop.exe` from the release assets and run it on Windows 10 or W
 
 > **Note:** Windows SmartScreen may display a warning because the executable is not digitally signed. The complete source code is available in this repository for inspection.
 
+---
+
 ## 📸 Screenshots
 
-### Light theme
+AlwaysOnTop features a clean Windows interface with Light, Dark and System theme support.
 
-![AlwaysOnTop in Light theme](screenshots/AlwaysOnTop-Light.png)
+### ☀️ Light Theme
 
-### Dark theme
+![AlwaysOnTop Light Theme](screenshots/AlwaysOnTop-Light.png)
 
-![AlwaysOnTop in Dark theme](screenshots/AlwaysOnTop-Dark.png)
+### 🌙 Dark Theme
 
-A **System** theme is also available and follows the Windows light/dark appearance setting.
+![AlwaysOnTop Dark Theme](screenshots/AlwaysOnTop-Dark.png)
 
-## ✨ Features
+The **System** theme automatically follows your Windows Light/Dark appearance setting, including changes made while the utility is running.
 
-- **Three ways to pin:** choose a visible application, select a running process or pick a window directly on screen.
-- **Persistent pins:** remember selected applications and automatically re-pin them when they reopen.
-- **Global hotkey:** press `Ctrl + Alt + T` to toggle the currently active window's topmost state.
-- **Multi-process support:** recognise related processes within application suites and manage their windows together.
-- **Elevated-window support:** detect applications running as Administrator and offer a way to restart the utility with matching privileges when needed.
-- **Z-order awareness:** apply topmost status in back-to-front order to reduce unwanted reshuffling of pinned windows.
-- **System Tray operation:** keep the utility running after closing its manager window.
-- **Startup options:** launch at Windows sign-in and optionally start minimised.
-- **Themes:** System, Light and Dark.
-- **Portable executable:** approximately 65 KB, with no third-party package dependencies.
+---
 
-## 🚀 Getting started
+## ✨ Key Features
 
-### Requirements
+- 📌 **Always on Top pinning** — Keep individual or multiple application windows above other windows.
+- 🔄 **Persistent application pinning** — Automatically restore Always on Top status when pinned applications are reopened.
+- 🎯 **Interactive window picker** — Select a visible window directly from your desktop using a crosshair.
+- 🖥️ **Process-level management** — Target applications that don't appear in conventional window lists.
+- 🛡️ **Administrator support** — Detect elevated processes and optionally restart the utility with Administrator privileges.
+- 🧩 **Multi-process application support** — Manage related windows belonging to complex application suites.
+- 🪟 **Intelligent Z-order handling** — Preserve the relative stacking order of multiple pinned windows.
+- 🌗 **Light, Dark and System themes** — Choose your preferred appearance or follow Windows automatically.
+- ⌨️ **Global keyboard shortcut** — Toggle Always on Top for the active window using `Ctrl + Alt + T`.
+- 🚀 **Windows startup integration** — Optionally launch automatically and start minimised to the System Tray.
+- 🪶 **Lightweight and portable** — Approximately 65 KB, written in C# using native Windows APIs.
+
+---
+
+## 🚀 Getting Started
+
+### System Requirements
 
 - Windows 10 or Windows 11
 - .NET Framework 4.x
-- Administrator privileges only when required to manage elevated applications
+- Administrator privileges only when managing certain elevated applications
 
-### Run the utility
+### Download and Run
 
-1. Download `AlwaysOnTop.exe` from this repository's **Releases** page, if a release is available, or [build it from source](#-building-from-source).
-2. Save the executable in a folder of your choice.
-3. Double-click `AlwaysOnTop.exe`.
-4. Select an application to pin, use the screen picker or focus a window and press `Ctrl + Alt + T`.
+1. Open the [latest release](https://github.com/LibbyLamarr/AlwaysOnTop/releases/latest).
+2. Download `AlwaysOnTop.exe` from the Assets section.
+3. Save the executable to a folder of your choice.
+4. Double-click `AlwaysOnTop.exe` to launch the utility.
+5. Select an application to pin or use the interactive window picker.
 
-There is no installer. Closing the manager window minimises it to the System Tray; use **Quit Utility** to stop it completely.
+No traditional installation is required.
 
-> **Tip:** AlwaysOnTop must remain running for automatic re-pinning and ongoing management of saved pins.
+> **Note:** AlwaysOnTop runs in the System Tray. Closing the main window minimises the application rather than terminating it. Use **Quit Utility** to exit completely.
 
-## 📌 Pinning windows
+### Quick Pinning
+
+The fastest way to pin a window is to bring it into focus and press:
+
+**`Ctrl + Alt + T`**
+
+Press the shortcut again to toggle its Always on Top status.
+
+---
+
+## 🖥️ Three Ways to Pin Applications
 
 ### 1. Running Applications
 
-The **Running Applications** panel (top left) lists currently visible standard application windows and provides a live search filter.
+The **Running Applications** panel (top-left) displays currently visible standard application windows.
 
-Select one or more entries and click **📌 Pin Selected App**, or double-click a row to pin it immediately.
+- Browse all detected application windows.
+- Use the real-time search filter to find an application.
+- Select one or more applications.
+- Click **📌 Pin Selected App**, or double-click a row to pin immediately.
+
+Ideal for everyday Windows applications.
 
 ### 2. Running Windows Processes
 
-The **Running Windows Processes** panel (top right) lists active processes, including their names, process IDs (PIDs) and detected window status. A live filter helps locate a process quickly.
+The **Running Windows Processes** panel (top-right) provides access to active Windows processes.
 
-This is useful when an application uses non-standard windows or does not appear in the conventional visible-window list.
+It displays:
+
+- Process name
+- Process ID (PID)
+- Detected window status
+
+A live search filter makes it easy to locate a particular process.
+
+This method is useful for applications that use non-standard windows, borderless interfaces, tray-hosted components or multiple background processes.
 
 ### 3. Interactive Window Picker
 
-Click **🎯 Pick Window on Screen** to enter screen-picking mode:
+The interactive picker lets you select a window directly from the desktop without needing to know its process name.
 
-1. The pointer changes to a crosshair (`+`).
-2. Hover over a window to see a floating preview of its application, window title and PID.
-3. Left-click the window to pin it.
+1. Click **🎯 Pick Window on Screen** in the application header.
+2. Your mouse pointer changes to a crosshair (`+`).
+3. Move the pointer over the window you want to pin.
+4. A floating information banner displays the detected application, window title and PID.
+5. Left-click the target window to pin it.
 
-Press `Esc`, right-click or click an empty desktop/taskbar area to cancel.
+To cancel the picker, press `Esc`, right-click, or click an empty desktop or taskbar area.
 
-## 🔄 Managing persistent pins
+---
 
-The **Always on Top Applications** panel lists saved pinned applications. Their details are stored in `AlwaysOnTop.settings.json`.
+## 📌 Persistent Application Pinning
 
-- **Automatic re-pinning:** when a saved application closes and later reopens, the utility detects its new window and restores the topmost setting.
-- **Remove one or more pins:** select entries and click **✕ Remove Selected from Always on Top**, or double-click an entry.
-- **Remove all pins:** click **Remove All from Always on Top**.
-- **Clean exit:** **Quit Utility** removes the topmost flag from currently managed windows before exiting normally.
+AlwaysOnTop does more than temporarily apply a topmost flag.
 
-## 🛡️ Advanced window handling
+### Automatic Re-Pinning
 
-### Elevated applications
+Pinned applications are remembered in the configuration file:
 
-Windows User Interface Privilege Isolation (UIPI) restricts some interactions between processes running at different privilege levels. AlwaysOnTop detects elevated target processes and provides a **🛡️ Run as Administrator** option when higher privileges are needed.
+`AlwaysOnTop.settings.json`
 
-> Run the utility as Administrator only when necessary. Some protected windows remain subject to Windows security restrictions.
+If you close a pinned application and reopen it later, AlwaysOnTop automatically detects its new window and reapplies the Always on Top status.
 
-### Related processes
+This is particularly useful for applications that restart or recreate their windows during normal operation.
 
-Some applications create multiple processes for separate parts of their interface. AlwaysOnTop can match related processes by a shared suite prefix, allowing their associated windows to be managed together.
+### Pinned Applications Manager
 
-### Stubborn or custom-framed windows
+The **Always on Top Applications** panel displays your saved pinned applications.
 
-The utility uses Win32 `SetWindowPos` with `HWND_TOPMOST` and includes an `AttachThreadInput` fallback for windows that do not respond reliably to ordinary topmost operations.
+You can:
 
-### Relative Z-order
+- Double-click an entry to unpin it.
+- Select entries and click **✕ Remove Selected from Always on Top**.
+- Click **Remove All from Always on Top** to clear all pinned applications.
 
-When several windows are pinned, repeatedly applying topmost status can cause unwanted changes in which pinned window appears in front. AlwaysOnTop applies updates in back-to-front Z-order to help preserve the existing relative stacking order.
+### Clean Exit
 
-These techniques improve compatibility but cannot guarantee topmost behaviour for every Windows application.
+Selecting **Quit Utility** removes the Always on Top flag from currently managed windows before the utility exits.
 
-## 🎨 Themes
+This ensures that a normal shutdown does not intentionally leave applications stuck on top.
 
-Right-click the System Tray icon and choose **Theme**:
+---
 
-| Theme | Behaviour |
-| --- | --- |
-| **System** | Follows the Windows light/dark setting, including changes while running |
-| **Light** | Uses the light interface |
-| **Dark** | Uses a dark slate interface, including title bar, column headers, grid lines and scrollbars |
+## 🛡️ Advanced Window Management
 
-## ⚙️ System Tray and startup
+### Administrator and Elevated Application Support
 
-- **Minimise to Tray:** clicking the main window's `X` or **Minimize to Tray** keeps the utility running in the System Tray.
-- **Open manager:** left-click or double-click the tray icon.
-- **Start with Windows:** optionally register the utility at sign-in under `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`.
-- **Start minimised:** optionally launch directly into the System Tray.
-- **Quit completely:** select **Quit Utility** in the main window or tray menu.
+Windows User Interface Privilege Isolation (UIPI) restricts certain interactions between applications running at different privilege levels.
 
-## ⌨️ Shortcuts and controls
+This can prevent standard-user utilities from reliably managing windows belonging to elevated applications.
 
-| Action | Control |
-| --- | --- |
-| Toggle topmost state of the active window | `Ctrl + Alt + T` |
-| Pin an application or process | Select and click **Pin**, or double-click |
-| Remove a saved pin | Select and click **Remove**, or double-click |
-| Pick a window on screen | **🎯 Pick Window on Screen**, then left-click the target |
-| Cancel screen picker | `Esc`, right-click or click empty desktop/taskbar |
-| Change theme | Tray icon → **Theme** |
-| Open manager | Left-click or double-click tray icon |
-| Exit completely | **Quit Utility** |
+AlwaysOnTop includes:
 
-## 🛠️ Building from source
+- Detection of elevated target processes.
+- A convenient **🛡️ Run as Administrator** option.
+- Support for managing elevated application windows when running with appropriate privileges.
 
-AlwaysOnTop is written in C# with Windows Forms and Win32 P/Invoke. The included build script uses the .NET Framework C# compiler, so Visual Studio and third-party NuGet packages are not required.
+> **Security:** Administrator privileges are not required for normal operation. Only elevate AlwaysOnTop when necessary.
 
-1. Clone the repository (replace `<your-username>` with the repository owner's GitHub username):
+### Multi-Process Application Support
 
-   ```cmd
-   git clone https://github.com/<your-username>/AlwaysOnTop.git
-   cd AlwaysOnTop
-   ```
+Some Windows applications use multiple processes to manage different parts of their interface. These processes may create separate windows, making conventional Always on Top utilities less reliable.
 
-2. Run the build script:
+AlwaysOnTop includes process-family matching to identify related processes and manage their associated windows together.
 
-   ```cmd
-   build.bat
-   ```
+This helps maintain consistent Always on Top behaviour for applications with complex, multi-process architectures, without requiring users to identify and pin every related process individually.
 
-3. Run the resulting `AlwaysOnTop.exe` (approximately 65 KB).
+### Handling Stubborn Windows
 
-The build script uses:
+Certain applications use custom window frameworks or non-standard window handling that doesn't always respond reliably to conventional topmost operations.
+
+AlwaysOnTop uses native Win32 functionality, including:
+
+- `SetWindowPos`
+- `HWND_TOPMOST`
+- `AttachThreadInput`
+
+A thread-input attachment fallback provides additional handling for windows that require it.
+
+### Intelligent Z-Order Preservation
+
+When several applications are pinned simultaneously, conventional topmost utilities can sometimes cause background pinned windows to jump in front of the active window.
+
+AlwaysOnTop addresses this by applying topmost status in back-to-front Z-order.
+
+This helps maintain the relative stacking order of pinned applications, so the window you're actively using isn't unnecessarily obscured by another pinned window.
+
+---
+
+## 🎨 Themes and Appearance
+
+AlwaysOnTop supports three appearance modes:
+
+| Theme | Description |
+|---|---|
+| **System** | Automatically follows Windows Light/Dark mode |
+| **Light** | Clean, light Windows interface |
+| **Dark** | Dark slate interface with matching controls and title bar |
+
+To change themes, right-click the System Tray icon and select **Theme**.
+
+The System theme automatically responds to Windows appearance changes while the utility is running.
+
+---
+
+## ⚙️ System Tray and Startup Options
+
+AlwaysOnTop is designed to operate quietly in the background.
+
+### System Tray Integration
+
+Closing the application window using `X` or **Minimize to Tray** keeps the utility running in the System Tray.
+
+You can reopen the manager using the tray icon or exit completely using **Quit Utility**.
+
+### Start Automatically with Windows
+
+Enable **Start automatically on Windows start** to launch AlwaysOnTop when you sign in.
+
+The utility uses the current-user Windows startup registry location:
+
+```text
+HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+```
+
+### Start Minimised
+
+Enable **Start minimised to System Tray** to launch directly into the background without displaying the main manager window.
+
+---
+
+## ⌨️ Keyboard Shortcuts and Controls
+
+| Action | Shortcut / Control |
+|---|---|
+| Toggle Always on Top for active window | `Ctrl + Alt + T` |
+| Pin an application or process | Select + Pin, or double-click |
+| Unpin a pinned application | Select + Remove, or double-click |
+| Pick a window from the desktop | 🎯 Pick Window on Screen |
+| Cancel window picker | `Esc`, right-click or click empty desktop |
+| Change theme | Tray icon → Theme |
+| Open the manager | Left-click or double-click tray icon |
+| Quit completely | Quit Utility |
+
+---
+
+## 🛠️ Building from Source
+
+AlwaysOnTop is written in C# using Windows Forms and native Win32 APIs through P/Invoke.
+
+It can be compiled using the C# compiler supplied with the Windows .NET Framework installation.
+
+**No Visual Studio installation or third-party NuGet packages are required.**
+
+### 1. Clone the Repository
+
+Open a Command Prompt and run:
+
+```cmd
+git clone https://github.com/LibbyLamarr/AlwaysOnTop.git
+cd AlwaysOnTop
+```
+
+### 2. Build the Application
+
+Run the included build script:
+
+```cmd
+build.bat
+```
+
+The script invokes the .NET Framework C# compiler:
 
 ```text
 %WINDIR%\Microsoft.NET\Framework64\v4.0.30319\csc.exe
 ```
 
-## 📁 Project files
+### 3. Run the Executable
+
+The build produces:
+
+```text
+AlwaysOnTop.exe
+```
+
+The resulting executable is approximately 65 KB and requires no additional third-party packages.
+
+---
+
+## 📁 Project Structure
 
 ```text
 AlwaysOnTop/
@@ -197,31 +330,70 @@ AlwaysOnTop/
 └── LICENSE
 ```
 
-| File | Purpose |
-| --- | --- |
-| `AlwaysOnTop.cs` | C# source, WinForms interface, native Windows integration and topmost engine |
-| `app.ico` | Multi-resolution application and tray icon |
-| `build.bat` | One-click compilation script |
-| `screenshots/` | Light and Dark theme screenshots |
+| File | Description |
+|---|---|
+| `AlwaysOnTop.cs` | Complete C# application source, WinForms UI, Win32 integration and window management engine |
+| `app.ico` | Multi-resolution application and System Tray icon |
+| `build.bat` | Build script using the .NET Framework C# compiler |
+| `screenshots/` | Light and Dark theme application screenshots |
 | `README.md` | Project documentation |
 | `LICENSE` | MIT License |
 
-`AlwaysOnTop.exe` is the compiled output (and may be provided as a release download). `AlwaysOnTop.settings.json` is generated at runtime and stores saved pins and preferences; it should not be committed with personal settings.
+The compiled `AlwaysOnTop.exe` is available from the repository's [Releases](https://github.com/LibbyLamarr/AlwaysOnTop/releases) page.
 
-## ⚠️ Limitations
+The utility also generates:
 
-- Windows only; macOS and Linux are not supported.
-- Managing some elevated applications may require running AlwaysOnTop as Administrator.
-- Protected windows and exclusive-fullscreen applications may not be manageable.
-- Some applications override topmost settings or use window behaviour that cannot be controlled reliably.
-- Automatic re-pinning requires AlwaysOnTop to remain running.
+`AlwaysOnTop.settings.json`
 
-## 💬 About this project
+This JSON file stores pinned application information, startup preferences and theme settings.
+
+---
+
+## 🔧 Technical Overview
+
+AlwaysOnTop is implemented using C# Windows Forms and native Windows APIs.
+
+Its primary components include:
+
+- **Window discovery:** Enumerates visible application windows and running processes.
+- **Window picker:** Uses mouse and keyboard hooks to identify windows directly from the desktop.
+- **Topmost engine:** Applies and maintains window topmost status through Win32 APIs.
+- **Persistent configuration:** Stores pinned applications and user preferences in JSON.
+- **Process matching:** Identifies applications and related multi-process suites.
+- **Z-order management:** Preserves relative stacking order between pinned windows.
+- **System Tray integration:** Provides background operation and application controls.
+- **Theme engine:** Supports Windows appearance integration and custom Light/Dark rendering.
+
+The application is contained in a compact C# codebase, making it straightforward to inspect, modify and compile.
+
+---
+
+## ⚠️ Known Limitations
+
+- **Windows only:** AlwaysOnTop uses Windows-specific APIs and is not compatible with macOS or Linux.
+- **Elevated applications:** Some Administrator-level windows may require the utility to run with elevated privileges.
+- **Protected windows:** Windows security restrictions may prevent interaction with certain protected or system-level windows.
+- **Exclusive fullscreen applications:** Always on Top behaviour is not guaranteed for exclusive fullscreen games or applications.
+- **Application-specific behaviour:** Some applications may override topmost settings or use unusual window management techniques.
+
+AlwaysOnTop is designed for standard Windows desktop environments and cannot override every operating-system-level restriction.
+
+---
+
+## ℹ️ About This Project
 
 AlwaysOnTop is a personal project, shared in case others find it useful. It has been developed with AI assistance, and I am continuing to test, refine and improve its features.
 
-Feedback, bug reports and contributions are welcome through GitHub Issues and pull requests.
+Suggestions, bug reports and contributions are welcome through [GitHub Issues](https://github.com/LibbyLamarr/AlwaysOnTop/issues).
+
+---
 
 ## 📄 License
 
-Released under the [MIT License](LICENSE).
+AlwaysOnTop is released under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for details.
+
+---
+
+**📌 AlwaysOnTop — Keep the windows that matter exactly where you need them.**

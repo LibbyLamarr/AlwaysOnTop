@@ -396,4 +396,23 @@ See the [LICENSE](LICENSE) file for details.
 
 ---
 
+## ☕ Support the Project
+
+AlwaysOnTop started as a personal project to have an always on top utility and as an alternative to using Windows Power Toys, which I previously been using solely for this feature.
+
+I've made it freely available in case it can be of use to others.
+
+If you enjoy using AlwaysOnTop and would like to offer support, you're very welcome to buy me a coffee! It's entirely optional, but always appreciated.
+
+<a href="https://buymeacoffee.com/libbylamarr">
+  <img
+    src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+    alt="Buy Me a Coffee"
+    width="180">
+</a>
+
+Thank you for looking at AlwaysOnTop :)
+
+---
+
 **📌 AlwaysOnTop — Keep the windows that matter exactly where you need them.**
